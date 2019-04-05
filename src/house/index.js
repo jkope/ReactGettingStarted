@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import "./house.css";
+import Inquiry from './inquiry';
+import emailIcon from './Email.png';
+import PropTypes from 'prop-types';
 
 class House extends Component {
-    state = {  }
+    state = { inquiryShown: false }
+
+    inquiryToggle = () => {
+        this.setState({ inquiryShown: !this.state.inquiryShown })
+    }
+
 
 
     render() {
@@ -33,7 +41,10 @@ class House extends Component {
         )
     }
 
-    
+
 }
- 
+
+
+House.propTypes = { house: PropTypes.object.isRequired }
+
 export default House;
